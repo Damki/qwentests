@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+:root {
+  --neon-blue: #00f3ff;
+  --neon-pink: #ff00ff;
+  --neon-purple: #bd00ff;
+  --neon-cyan: #00ffff;
+  --dark-bg: #0a0a0f;
+  --darker-bg: #050508;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--dark-bg);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.neon-text-blue {
+  text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue), 0 0 30px var(--neon-blue);
+}
+
+.neon-text-pink {
+  text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink), 0 0 30px var(--neon-pink);
+}
+
+.neon-border {
+  box-shadow: 0 0 10px var(--neon-blue), inset 0 0 10px var(--neon-blue);
+}
+
+.glow-effect {
+  filter: drop-shadow(0 0 10px var(--neon-blue)) drop-shadow(0 0 20px var(--neon-blue));
+}
+
+.scanlines::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.1) 0px,
+    rgba(0, 0, 0, 0.1) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
